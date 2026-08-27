@@ -1,0 +1,50 @@
+[
+  {
+    "id": "qwen2.5-coder:14b-q4_K_M",
+    "provider": "ollama",
+    "capabilities": {
+      "reasoning": 88,
+      "coding": 94,
+      "vision": 0,
+      "tool_use": 85,
+      "structured_output": 90,
+      "context_length": 32768,
+      "instruction_following": 90
+    },
+    "resources": { "vram_mb": 9000, "ram_mb": 9000, "speed_tps": 42, "load_time_s": 8 },
+    "reliability": 0.92,
+    "tags": ["code", "reasoning"]
+  },
+  {
+    "id": "qwen2.5:7b-q4_K_M",
+    "provider": "ollama",
+    "capabilities": {
+      "reasoning": 78,
+      "coding": 74,
+      "vision": 0,
+      "tool_use": 80,
+      "structured_output": 82,
+      "context_length": 32768,
+      "instruction_following": 85
+    },
+    "resources": { "vram_mb": 5000, "ram_mb": 5000, "speed_tps": 67, "load_time_s": 3 },
+    "reliability": 0.88,
+    "tags": ["fast", "router", "general"]
+  },
+  {
+    "id": "llava:13b",
+    "provider": "ollama",
+    "capabilities": {
+      "reasoning": 70,
+      "coding": 40,
+      "vision": 92,
+      "tool_use": 60,
+      "structured_output": 70,
+      "context_length": 4096,
+      "instruction_following": 75
+    },
+    "resources": { "vram_mb": 8500, "ram_mb": 8500, "speed_tps": 28, "load_time_s": 7 },
+    "reliability": 0.85,
+    "tags": ["vision"]
+  }
+]

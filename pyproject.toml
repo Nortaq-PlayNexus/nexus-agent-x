@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "nexus-agent-x"
+version = "2.0.0"
+description = "Local Autonomous AI Operating System — Ollama is the cortex. NEXUS is the body, memory, and civilization."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [{ name = "PlayNexus" }]
+keywords = ["ai", "local-first", "ollama", "agent-os", "autonomous", "memory", "multi-agent", "offline"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "requests>=2.31.0",
+    "rich>=13.0.0",
+    "pyyaml>=6.0",
+    "numpy>=1.24.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Nortaq-PlayNexus/nexus-agent-x"
+Repository = "https://github.com/Nortaq-PlayNexus/nexus-agent-x"
+
+[tool.setuptools.packages.find]
+include = ["core*"]

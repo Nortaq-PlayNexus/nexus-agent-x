@@ -1,0 +1,20 @@
+{
+  "name": "filesystem.write",
+  "description": "Write file atomically with checkpoint and hash verification",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "path": { "type": "string", "description": "Absolute path" },
+      "content": { "type": "string" },
+      "atomic": { "type": "boolean", "default": true }
+    },
+    "required": ["path", "content"]
+  },
+  "permissions": ["WRITE_FILES"],
+  "risk_level": "MEDIUM",
+  "timeout_ms": 10000,
+  "sandbox": "host",
+  "rollback_support": true,
+  "verification_method": "filesystem.read + sha256 hash",
+  "rate_limit": "20/min"
+}

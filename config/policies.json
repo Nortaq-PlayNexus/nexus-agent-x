@@ -1,0 +1,20 @@
+{
+  "mode": "assistant",
+  "policies": {
+    "READ_FILES": "allow",
+    "WRITE_FILES": "ask",
+    "DELETE_FILES": "ask",
+    "EXECUTE_COMMANDS": "ask",
+    "NETWORK_ACCESS": "ask",
+    "BROWSER_ACCESS": "ask",
+    "SYSTEM_CONTROL": "ask",
+    "INSTALL_SOFTWARE": "ask",
+    "ACCESS_SECRETS": "ask"
+  },
+  "sandbox": {
+    "LOW": "host",
+    "MED": "host+checkpoint",
+    "HIGH": "docker"
+  },
+  "retry_budget": 3
+}
