@@ -1,0 +1,21 @@
+﻿{
+    "parameters":  {
+                       "type":  "object",
+                       "properties":  {
+                                          "url":  {
+                                                      "type":  "string"
+                                                  }
+                                      },
+                       "required":  [
+                                        "url"
+                                    ]
+                   },
+    "verification_method":  "hash or exit code",
+    "description":  "Navigate URL",
+    "permissions":  "[\"NETWORK_ACCESS\",\"BROWSER_ACCESS\"]",
+    "timeout_ms":  10000,
+    "name":  "browser.navigate",
+    "risk_level":  "MEDIUM",
+    "sandbox":  "host",
+    "rollback_support":  true
+}

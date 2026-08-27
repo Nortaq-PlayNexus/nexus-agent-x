@@ -1,0 +1,21 @@
+﻿{
+    "parameters":  {
+                       "type":  "object",
+                       "properties":  {
+                                          "query":  {
+                                                        "type":  "string"
+                                                    }
+                                      },
+                       "required":  [
+                                        "query"
+                                    ]
+                   },
+    "verification_method":  "hash or exit code",
+    "description":  "Web search",
+    "permissions":  "[\"NETWORK_ACCESS\"]",
+    "timeout_ms":  10000,
+    "name":  "browser.search",
+    "risk_level":  "MEDIUM",
+    "sandbox":  "host",
+    "rollback_support":  true
+}

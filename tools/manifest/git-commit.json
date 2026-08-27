@@ -1,0 +1,21 @@
+﻿{
+    "parameters":  {
+                       "type":  "object",
+                       "properties":  {
+                                          "message":  {
+                                                          "type":  "string"
+                                                      }
+                                      },
+                       "required":  [
+                                        "message"
+                                    ]
+                   },
+    "verification_method":  "hash or exit code",
+    "description":  "Git commit with message",
+    "permissions":  "[\"WRITE_FILES\",\"EXECUTE_COMMANDS\"]",
+    "timeout_ms":  10000,
+    "name":  "git.commit",
+    "risk_level":  "MEDIUM",
+    "sandbox":  "host",
+    "rollback_support":  true
+}

@@ -1,0 +1,21 @@
+﻿{
+    "parameters":  {
+                       "type":  "object",
+                       "properties":  {
+                                          "path":  {
+                                                       "type":  "string"
+                                                   }
+                                      },
+                       "required":  [
+                                        "path"
+                                    ]
+                   },
+    "verification_method":  "hash or exit code",
+    "description":  "Read file",
+    "permissions":  "[\"READ_FILES\"]",
+    "timeout_ms":  10000,
+    "name":  "filesystem.read",
+    "risk_level":  "LOW",
+    "sandbox":  "host",
+    "rollback_support":  false
+}

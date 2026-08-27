@@ -1,0 +1,1 @@
+﻿{"name":"github","tools":["git.commit","git.diff"],"permissions":["WRITE_FILES","EXECUTE_COMMANDS"],"version":"1.0.0","risk":"MEDIUM"}

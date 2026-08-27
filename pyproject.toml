@@ -1,33 +1,68 @@
 [build-system]
 requires = ["setuptools>=68.0", "wheel"]
-build-backend = "setuptools.backends._legacy:_Backend"
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "nexus-agent-x"
-version = "2.0.0"
+version = "2.1.0"
 description = "Local Autonomous AI Operating System — Ollama is the cortex. NEXUS is the body, memory, and civilization."
 readme = "README.md"
-license = "MIT"
+license = {text = "MIT"}
 requires-python = ">=3.11"
 authors = [{ name = "PlayNexus" }]
-keywords = ["ai", "local-first", "ollama", "agent-os", "autonomous", "memory", "multi-agent", "offline"]
+maintainers = [{ name = "PlayNexus", email = "team@playnexus.io" }]
+keywords = ["ai", "local-first", "ollama", "agent-os", "autonomous", "memory", "multi-agent", "offline", "rag", "vision"]
 classifiers = [
     "Development Status :: 4 - Beta",
+    "Environment :: Console",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
 ]
 dependencies = [
     "requests>=2.31.0",
     "rich>=13.0.0",
     "pyyaml>=6.0",
     "numpy>=1.24.0",
+    "typer>=0.9.0",
+    "pydantic>=2.5.0",
+    "sqlalchemy>=2.0.0",
+    "chromadb>=0.4.0; python_version >= '3.11'",
 ]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4", "pytest-asyncio>=0.21", "ruff>=0.1.0", "mypy>=1.8", "httpx>=0.25"]
+vision = ["pillow>=10.0", "pytesseract>=0.3.10"]
+voice = ["openai-whisper>=20231117; sys_platform == 'win32'"]
+
+[project.scripts]
+nexus = "nexus.cli:main"
 
 [project.urls]
 Homepage = "https://github.com/Nortaq-PlayNexus/nexus-agent-x"
 Repository = "https://github.com/Nortaq-PlayNexus/nexus-agent-x"
+Issues = "https://github.com/Nortaq-PlayNexus/nexus-agent-x/issues"
 
 [tool.setuptools.packages.find]
-include = ["core*"]
+include = ["nexus*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "C4"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+ignore_missing_imports = true

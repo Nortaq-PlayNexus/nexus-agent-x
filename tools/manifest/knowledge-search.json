@@ -1,0 +1,24 @@
+﻿{
+    "parameters":  {
+                       "type":  "object",
+                       "properties":  {
+                                          "query":  {
+                                                        "type":  "string"
+                                                    },
+                                          "topk":  {
+                                                       "type":  "integer"
+                                                   }
+                                      },
+                       "required":  [
+                                        "query"
+                                    ]
+                   },
+    "verification_method":  "hash or exit code",
+    "description":  "Vector search local KB",
+    "permissions":  "[]",
+    "timeout_ms":  10000,
+    "name":  "knowledge.search",
+    "risk_level":  "LOW",
+    "sandbox":  "host",
+    "rollback_support":  false
+}

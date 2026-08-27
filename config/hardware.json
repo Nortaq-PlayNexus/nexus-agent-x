@@ -1,0 +1,15 @@
+﻿{
+    "gpu":  [
+                {
+                    "vram_mb":  8192,
+                    "vendor":  "auto"
+                }
+            ],
+    "cpu":  {
+                "cores":  8,
+                "model":  "auto"
+            },
+    "ram":  {
+                "total_mb":  16384
+            }
+}

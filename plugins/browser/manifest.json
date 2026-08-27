@@ -1,0 +1,1 @@
+﻿{"name":"browser","tools":["browser.search","browser.navigate"],"permissions":["NETWORK_ACCESS","BROWSER_ACCESS"],"version":"1.0.0","risk":"MEDIUM"}

@@ -1,0 +1,25 @@
+﻿{
+    "parameters":  {
+                       "type":  "object",
+                       "properties":  {
+                                          "src":  {
+                                                      "type":  "string"
+                                                  },
+                                          "dst":  {
+                                                      "type":  "string"
+                                                  }
+                                      },
+                       "required":  [
+                                        "src",
+                                        "dst"
+                                    ]
+                   },
+    "verification_method":  "hash or exit code",
+    "description":  "Copy file atomically",
+    "permissions":  "[\"READ_FILES\",\"WRITE_FILES\"]",
+    "timeout_ms":  10000,
+    "name":  "filesystem.copy",
+    "risk_level":  "MEDIUM",
+    "sandbox":  "host",
+    "rollback_support":  true
+}

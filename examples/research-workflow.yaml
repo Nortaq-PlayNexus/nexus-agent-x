@@ -1,0 +1,16 @@
+name: research-pipeline
+description: Multi-agent research with verification
+agents:
+  - name: researcher
+    type: llm
+    model: qwen2.5:7b
+  - name: reviewer
+    type: llm
+    model: qwen2.5:7b
+steps:
+  - agent: researcher
+    task: "Research {{topic}} and cite sources"
+  - agent: reviewer
+    task: "Verify claims: FACT|INFERENCE|OPINION|UNCERTAINTY"
+variables:
+  topic: "local-first AI"

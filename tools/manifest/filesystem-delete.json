@@ -1,0 +1,21 @@
+﻿{
+    "parameters":  {
+                       "type":  "object",
+                       "properties":  {
+                                          "path":  {
+                                                       "type":  "string"
+                                                   }
+                                      },
+                       "required":  [
+                                        "path"
+                                    ]
+                   },
+    "verification_method":  "hash or exit code",
+    "description":  "Delete with checkpoint",
+    "permissions":  "[\"DELETE_FILES\"]",
+    "timeout_ms":  10000,
+    "name":  "filesystem.delete",
+    "risk_level":  "HIGH",
+    "sandbox":  "host",
+    "rollback_support":  true
+}

@@ -1,0 +1,21 @@
+﻿{
+    "parameters":  {
+                       "type":  "object",
+                       "properties":  {
+                                          "text":  {
+                                                       "type":  "string"
+                                                   }
+                                      },
+                       "required":  [
+                                        "text"
+                                    ]
+                   },
+    "verification_method":  "hash or exit code",
+    "description":  "Type text",
+    "permissions":  "[\"SYSTEM_CONTROL\"]",
+    "timeout_ms":  10000,
+    "name":  "automation.type",
+    "risk_level":  "HIGH",
+    "sandbox":  "host",
+    "rollback_support":  true
+}

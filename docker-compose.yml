@@ -1,0 +1,25 @@
+services:
+  nexus:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./nexus.db:/app/nexus.db
+      - ./config:/app/config
+      - ./logs:/app/logs
+    environment:
+      - NEXUS_ENV=local
+      - OLLAMA_HOST=http://host.docker.internal:11434
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    profiles: ["with-ollama"]
+
+volumes:
+  ollama_data:

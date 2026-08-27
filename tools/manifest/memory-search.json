@@ -1,0 +1,21 @@
+﻿{
+    "parameters":  {
+                       "type":  "object",
+                       "properties":  {
+                                          "query":  {
+                                                        "type":  "string"
+                                                    }
+                                      },
+                       "required":  [
+                                        "query"
+                                    ]
+                   },
+    "verification_method":  "hash or exit code",
+    "description":  "Search memory",
+    "permissions":  "[]",
+    "timeout_ms":  10000,
+    "name":  "memory.search",
+    "risk_level":  "LOW",
+    "sandbox":  "host",
+    "rollback_support":  false
+}

@@ -1,0 +1,21 @@
+﻿{
+    "parameters":  {
+                       "type":  "object",
+                       "properties":  {
+                                          "code":  {
+                                                       "type":  "string"
+                                                   }
+                                      },
+                       "required":  [
+                                        "code"
+                                    ]
+                   },
+    "verification_method":  "hash or exit code",
+    "description":  "Run Python snippet",
+    "permissions":  "[\"EXECUTE_COMMANDS\"]",
+    "timeout_ms":  10000,
+    "name":  "python.exec",
+    "risk_level":  "HIGH",
+    "sandbox":  "host",
+    "rollback_support":  true
+}

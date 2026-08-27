@@ -8,6 +8,9 @@
 [![Python](https://img.shields.io/badge/Python-%3E%3D3.11-3776AB?logo=python&logoColor=white)](https://python.org)
 [![Local-First](https://img.shields.io/badge/Local--First-100%25-00C853?logo=ollama)](https://ollama.com)
 [![Offline](https://img.shields.io/badge/Offline-Capable-FF6D00)](docs/NEXUS-ULTRA-SPEC.md)
+[![CI](https://github.com/Nortaq-PlayNexus/nexus-agent-x/actions/workflows/ci.yml/badge.svg)](https://github.com/Nortaq-PlayNexus/nexus-agent-x/actions/workflows/ci.yml)
+[![Version](https://img.shields.io/badge/version-2.1.0-412991)](pyproject.toml)
+[![Tests](https://img.shields.io/badge/tests-8_passed-success)](tests/)
 
 </div>
 
@@ -15,7 +18,7 @@
 
 No cloud. No vendor lock-in. Zero data leaving your machine unless you explicitly allow it.
 
-> Ported and upgraded 10000X from the original `kjg.txt` blueprint (88 sections, ~35k chars) → **ULTRA v2.0 implementation-ready spec** with contracts, DDL, and executable skeletons.
+> Ported and upgraded **10000X → 1000X** from the original `kjg.txt` blueprint (88 sections, ~35k chars) → **ULTRA v2.1 implementation-ready OS** — now with executable Python package, 19 agent prompts, 16 tool manifests, and 8 passing tests.
 
 ---
 
@@ -62,18 +65,29 @@ See full spec: [`docs/NEXUS-ULTRA-SPEC.md`](docs/NEXUS-ULTRA-SPEC.md) — 30 sec
 git clone https://github.com/Nortaq-PlayNexus/nexus-agent-x.git
 cd nexus-agent-x
 
-# Inspect the ULTRA spec (the upgraded kjg.txt)
-cat docs/NEXUS-ULTRA-SPEC.md
+# Install (editable)
+pip install -e ".[dev]"
 
-# Database — create SQLite + vector index
-sqlite3 nexus.db < db/schema.sql
+# Bootstrap DB + check Ollama
+python scripts/bootstrap.py
+# or
+make db
 
-# Config — edit model profiles & policies
-cat config/models.json
-cat config/policies.json
+# Run via CLI (new in v2.1)
+nexus run --task "Build a Vite React app and verify the build" --mode autopilot
+nexus memory search "Rust" --topk 5
+nexus version
 
-# Run orchestrator skeleton (Phase 1)
+# Legacy skeleton still works
 python core/orchestrator/index.py --task "Build a Vite React app and verify the build"
+
+# Tests (8 passed)
+pytest -q
+
+# Docker
+docker compose up --build
+# or with Ollama sidecar
+docker compose --profile with-ollama up
 ```
 
 ---
@@ -81,17 +95,26 @@ python core/orchestrator/index.py --task "Build a Vite React app and verify the 
 ## Project structure
 
 ```
-NEXUS/
-├── core/{orchestrator,reasoning,planning,context,events,runtime}/
-├── models/{ollama,router,benchmarks,profiles}/
-├── memory/{working,episodic,semantic,procedural,preferences,retrieval}/
-├── agents/{commander,researcher,coder,debugger,analyst,reviewer}/
-├── skills/{registry,discovery,learning,benchmarks}/
-├── tools/{filesystem,terminal,browser,git,vision,automation}/
-├── security/{permissions,sandbox,policies,audit}/
-├── knowledge/{ingestion,embeddings,vector,graph}/
-├── scheduler/  plugins/  ui/{desktop,web,cli}/  voice/  vision/
-├── config/  db/  docs/  tools/manifest/
+nexus-agent-x/
+├── nexus/                      # Python package (pip install -e .)
+│   ├── core/ {orchestrator,bus,task_graph,context}
+│   ├── memory/ {store,retrieval,consolidation}
+│   ├── models/ {router,profiler}
+│   ├── agents/ {registry + 19 prompts in agents/prompts/}
+│   ├── tools/ {registry}
+│   ├── security/ {permissions,audit}
+│   ├── knowledge/ {ingestion,graph}
+│   ├── scheduler/ vision/ voice/
+│   └── cli.py (typer: nexus run/serve/memory)
+├── agents/prompts/             # 19 markdown role prompts
+├── tools/manifest/             # 16 JSON tool contracts
+├── config/ {models,policies,hardware}.json
+├── db/schema.sql               # SQLite WAL + permissions seed
+├── plugins/{browser,github}/
+├── ui/{index.html,app.js}      # Command Centre stub
+├── tests/ (8 tests)  examples/  scripts/bootstrap.py
+├── .github/workflows/ci.yml  Dockerfile  docker-compose.yml  Makefile
+└── docs/{NEXUS-ULTRA-SPEC.md,ARCHITECTURE.md,API.md}
 ```
 
 Matches the recommended structure in [`docs/NEXUS-ULTRA-SPEC.md:284`](docs/NEXUS-ULTRA-SPEC.md).

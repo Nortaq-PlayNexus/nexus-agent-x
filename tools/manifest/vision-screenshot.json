@@ -1,0 +1,16 @@
+﻿{
+    "parameters":  {
+                       "type":  "object",
+                       "properties":  {
+
+                                      }
+                   },
+    "verification_method":  "hash or exit code",
+    "description":  "Take screenshot",
+    "permissions":  "[]",
+    "timeout_ms":  10000,
+    "name":  "vision.screenshot",
+    "risk_level":  "LOW",
+    "sandbox":  "host",
+    "rollback_support":  false
+}

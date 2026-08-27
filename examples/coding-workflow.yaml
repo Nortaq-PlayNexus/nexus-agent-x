@@ -1,0 +1,20 @@
+name: coding-pipeline
+description: Architect → Coder → Tester → Reviewer
+agents:
+  - name: architect
+    type: llm
+  - name: coder
+    type: tool
+  - name: tester
+    type: tool
+steps:
+  - agent: architect
+    task: "Design {{project}}"
+  - agent: coder
+    task: "Implement"
+    tools: [filesystem.write, terminal.exec]
+  - agent: tester
+    task: "Verify: npm run build"
+    verification: {method: build, command: "npm run build"}
+variables:
+  project: "Vite React app with local RAG"

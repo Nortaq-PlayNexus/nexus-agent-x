@@ -1,0 +1,16 @@
+﻿{
+    "parameters":  {
+                       "type":  "object",
+                       "properties":  {
+
+                                      }
+                   },
+    "verification_method":  "hash or exit code",
+    "description":  "Git diff",
+    "permissions":  "[\"READ_FILES\"]",
+    "timeout_ms":  10000,
+    "name":  "git.diff",
+    "risk_level":  "LOW",
+    "sandbox":  "host",
+    "rollback_support":  false
+}

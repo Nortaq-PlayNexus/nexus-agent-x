@@ -1,0 +1,21 @@
+﻿{
+    "parameters":  {
+                       "type":  "object",
+                       "properties":  {
+                                          "target":  {
+                                                         "type":  "string"
+                                                     }
+                                      },
+                       "required":  [
+                                        "target"
+                                    ]
+                   },
+    "verification_method":  "hash or exit code",
+    "description":  "Semantic click",
+    "permissions":  "[\"SYSTEM_CONTROL\"]",
+    "timeout_ms":  10000,
+    "name":  "automation.click",
+    "risk_level":  "HIGH",
+    "sandbox":  "host",
+    "rollback_support":  true
+}

@@ -1,0 +1,21 @@
+﻿{
+    "parameters":  {
+                       "type":  "object",
+                       "properties":  {
+                                          "image":  {
+                                                        "type":  "string"
+                                                    }
+                                      },
+                       "required":  [
+                                        "image"
+                                    ]
+                   },
+    "verification_method":  "hash or exit code",
+    "description":  "OCR image",
+    "permissions":  "[]",
+    "timeout_ms":  10000,
+    "name":  "vision.ocr",
+    "risk_level":  "LOW",
+    "sandbox":  "host",
+    "rollback_support":  false
+}
