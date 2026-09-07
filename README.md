@@ -1,18 +1,32 @@
-<div align="center">
+<p align="center">
+  <img src="https://img.shields.io/badge/NEXUS-LOCAL%20AI%20OS-B8FF1E?style=flat-square&labelColor=0a0e1a" alt="nexus" />
+</p>
 
-# NEXUS Agent X
+# NEXUS :: LOCAL AI OPERATING SYSTEM
 
-**Local Autonomous AI Operating System — Ollama is the cortex. NEXUS is the body, memory, and civilization.**
+**Ollama is the cortex. NEXUS is the body, memory, and civilization.** A local-first autonomous AI platform that turns a modest model into a reasoning, planning, remembering, verifying, learning machine — controllable and transparent.
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Python](https://img.shields.io/badge/Python-%3E%3D3.11-3776AB?logo=python&logoColor=white)](https://python.org)
-[![Local-First](https://img.shields.io/badge/Local--First-100%25-00C853?logo=ollama)](https://ollama.com)
-[![Offline](https://img.shields.io/badge/Offline-Capable-FF6D00)](docs/NEXUS-ULTRA-SPEC.md)
-[![CI](https://github.com/Nortaq-PlayNexus/nexus-agent-x/actions/workflows/ci.yml/badge.svg)](https://github.com/Nortaq-PlayNexus/nexus-agent-x/actions/workflows/ci.yml)
-[![Version](https://img.shields.io/badge/version-2.1.0-412991)](pyproject.toml)
-[![Tests](https://img.shields.io/badge/tests-8_passed-success)](tests/)
+<p align="center">
+  <img src="https://img.shields.io/badge/PYTHON-%3E%3D3.11-ffc430?style=flat-square&logo=python&logoColor=ffc430&labelColor=0a0e1a" alt="python"/>
+  <img src="https://img.shields.io/badge/AGENTS-19-B8FF1E?style=flat-square&labelColor=0a0e1a" alt="agents"/>
+  <img src="https://img.shields.io/badge/TOOLS-16-3dd5ff?style=flat-square&labelColor=0a0e1a" alt="tools"/>
+  <img src="https://img.shields.io/badge/VERSION-2.1.0-00E5FF?style=flat-square&labelColor=0a0e1a" alt="version"/>
+  <img src="https://img.shields.io/badge/LOCAL-FIRST-100%25-B8FF1E?style=flat-square&labelColor=0a0e1a" alt="local"/>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/LICENSE-MIT-ff3b3b?style=flat-square&labelColor=0a0e1a" alt="license"/></a>
+</p>
 
-</div>
+<pre>
+IDENT ......... NEXUS-01
+CLASS ......... AUTONOMOUS AI OPERATING SYSTEM
+STATUS ........ ONLINE / ACTIVE
+CORTEX ........ OLLAMA
+MESH .......... 19 SPECIALISTS · 16 TOOLS
+LINK .......... /nexus-agent-x
+</pre>
+
+---
+
+## // 01 :: SIGNAL
 
 **NEXUS Agent X** is a local-first AI platform that turns a modest Ollama model into a full autonomous operating system. Not a chatbot — a **reasoning, planning, remembering, verifying, learning machine that operates your computer while remaining controllable and transparent.**
 
